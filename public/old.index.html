@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Szvy Central - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+    :root {
+      --nav-size-collapsed: 64px;
+      --nav-width-expanded: 300px;
+      --nav-expanded-height: 420px;
+      --nav-border-radius: 20px;
+      --nav-transition-speed: 0.38s;
+      --nav-transition-easing: cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    #main-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .nav-container {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 100;
+      transition: all 0.35s ease;
+    }
+
+    .nav-box {
+      width: var(--nav-size-collapsed);
+      height: var(--nav-size-collapsed);
+      background: #000000;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--nav-border-radius);
+      overflow: hidden;
+      transition: all var(--nav-transition-speed) var(--nav-transition-easing);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    .nav-container:hover .nav-box {
+      width: var(--nav-width-expanded);
+      height: var(--nav-expanded-height);
+      border-radius: 24px;
+      box-shadow: 0 16px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    .nav-box-content {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    .current-page-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 26px;
+      transition: all 0.35s ease;
+      opacity: 1;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .nav-container:hover .current-page-icon {
+      opacity: 0;
+      transform: scale(0.7) rotate(-15deg);
+    }
+
+    .nav-list {
+      position: absolute;
+      inset: 0;
+      padding: 14px;
+      margin: 0;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.35s ease 0.08s, visibility 0s linear 0.35s;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      overflow-y: auto;
+      background: rgba(0,0,0,0.35);
+    }
+
+    .nav-container:hover .nav-list {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: opacity 0.35s ease 0.18s;
+    }
+
+    .nav-list-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      background: rgba(255,255,255,0.03);
+      cursor: pointer;
+    }
+
+    .nav-list-item i {
+      font-size: 1.35rem;
+      width: 32px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .nav-list-item:hover {
+      background: rgba(255, 255, 255, 0.13);
+      transform: translateX(6px);
+    }
+
+    .nav-list-item.active {
+      background: rgba(255, 255, 255, 0.24);
+      font-weight: 500;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.13);
+      margin: 10px 0;
+      border-radius: 1px;
+    }
+
+    @media (max-width: 600px) {
+      :root {
+        --nav-width-expanded: 260px;
+        --nav-expanded-height: 380px;
+      }
+
+      .nav-list-item {
+        font-size: 0.97rem;
+        padding: 11px 14px;
+      }
+
+      .nav-list-item i {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <iframe id="main-frame" src="home.html"></iframe>
+
+  <div class="nav-container">
+    <div class="nav-box">
+      <div class="nav-box-content">
+        <div class="current-page-icon">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-list">
+          <li><a class="nav-list-item" data-target="home.html"><i class="fa-solid fa-house"></i>Home</a></li>
+          <li><a class="nav-list-item" data-target="g.html"><i class="fas fa-gamepad"></i>Games</a></li>
+          <li><a class="nav-list-item" data-target="a.html"><i class="fas fa-border-all"></i>Apps</a></li>
+
+          <li class="divider"></li>
+
+          <li><a class="nav-list-item" data-target="embed.html#https://discord.gg/linewize"><i class="fa-brands fa-discord"></i>Discord</a></li>
+          <li><a class="nav-list-item" data-target="credits.html"><i class="fa-solid fa-users"></i>Credits</a></li>
+          <li><a class="nav-list-item" data-target="DMCA.html"><i class="fa-solid fa-scale-balanced"></i>DMCA</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.nav-list-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetUrl = this.getAttribute('data-target');
+        if (targetUrl) {
+          document.getElementById('main-frame').src = targetUrl;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

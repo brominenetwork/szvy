@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Games - Szvy Central V3</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <div class="games-page">
+    <header class="games-header">
+      <h1>Games</h1>
+    </header>
+
+    <div class="games-grid" id="gamesGrid">
+      <div class="loading">Loading games...</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    async function loadGames() {
+      const grid = document.getElementById('gamesGrid');
+      
+      try {
+        const response = await fetch('a.json');
+        if (!response.ok) throw new Error('Failed to load a.json');
+        
+        const games = await response.json();
+        
+        grid.innerHTML = '';
+        
+        if (games.length === 0) {
+          grid.innerHTML = '<div class="loading">No games found</div>';
+          return;
+        }
+
+        games.forEach(game => {
+          const card = document.createElement('a');
+          card.href = game.url;
+          card.className = 'game-card';
+          card.innerHTML = `
+            <div class="card-bg" style="background-image: url('${game.img}')"></div>
+            <div class="card-content">
+              <h2>${game.alt}</h2>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      } catch (error) {
+        grid.innerHTML = '<div class="loading">Error loading games<br>Please try again later</div>';
+        console.error('Games loading error:', error);
+      }
+    }
+
+    loadGames();
+  </script>
+</body>
+</html>

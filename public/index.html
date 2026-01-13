@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <title>Szvy Central V3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Share+Tech&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/v2.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <script src="/js/usesettings.js"></script>
+    <script src="/js/panic.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="particles-js"></div>
+
+    <div class="browser-container">
+      <div class="tab-bar-container">
+        <div class="tab-bar"></div>
+        <button class="new-tab-button">+</button>
+      </div>
+      
+      <div class="url-bar-container">
+        <button class="icon-button" id="backButton">
+          <i class="fa fa-arrow-left"></i>
+        </button>
+        <button class="icon-button" id="forwardButton">
+          <i class="fa fa-arrow-right"></i>
+        </button>
+        <button class="icon-button" id="reloadButton">
+          <i class="fa fa-redo"></i>
+        </button>
+        <input type="text" class="url-input" placeholder="Search or type URL" readonly />
+        
+        <button class="icon-button" id="homeButton" onclick="document.getElementById('iframeid').src = '/';">
+          <i class="fa fa-house"></i>
+        </button>
+        <button class="icon-button" onclick="document.getElementById('iframeid').src = '/g.html';">
+          <i class="fa fa-gamepad"></i>
+        </button>
+        <button class="icon-button" onclick="document.getElementById('iframeid').src = '/a.html';">
+          <i class="fa fa-border-all"></i>
+        </button>
+      </div>
+      
+      <div class="browser-window">
+        <iframe src="/" frameborder="0" id="iframeid"></iframe>
+      </div>
+    </div>
+    
+    <script>
+      function erudaToggle() {
+        if (!document.getElementById("iframeid")) return;
+        const erudaWindow = document.getElementById("iframeid").contentWindow;
+        const erudaDocument = document.getElementById("iframeid").contentDocument;
+        if (!erudaWindow || !erudaDocument) return;
+        if (erudaWindow.eruda?._isInit) {
+          erudaWindow.eruda.destroy();
+        } else {
+          let script = erudaDocument.createElement("script");
+          script.src = "https://cdn.jsdelivr.net/npm/eruda";
+          script.onload = function () {
+            if (!erudaWindow) return;
+            erudaWindow.eruda.init();
+            erudaWindow.eruda.show();
+          };
+          erudaDocument.head.appendChild(script);
+        }
+      }
+    </script>
+    
+    <script src="/szvy/bundle.js"></script>
+    <script src="search.js"></script>
+    <script src="/szvy/config.js?cdn"></script>
+    <script src="js/psearch.js"></script>
+  </body>
+</html>
