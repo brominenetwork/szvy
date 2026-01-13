@@ -2,7 +2,7 @@
   <img src="https://files.catbox.moe/vl5cij.png" alt="szvy centraling" width="250">
 </p>
 
-<h1 align="center">Szvy Central V2</h1>
+<h1 align="center">Szvy Central V3</h1>
 
 
 A modern unblocked games site, based off of Ultraviolet.
