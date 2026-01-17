@@ -31,16 +31,13 @@ this repo is made in nodejs, which means you can only host this on a few platfor
 
 ## credits
 
-* [szvy](https://github.com/szvy) - the goated developer
-* [frogiee1](https://frogiee.one) - d1 helper of the site
-* [ultraviolet](https://github.com/titaniumnetwork-dev/Ultraviolet) - the entire proxy backend
-* [3kh0](https://github.com/3kh0) - a lot of game files
-* [selenite](https://gitlab.com/skysthelimit.dev/selenite) - a lot more game files
-* [red not sus](https://ch3n.cc) - iframe page
+* [qatual](https://github.com/szvy) - made the whole ui
+* [ajh](https://endis.rest) - all the backend help
+* [titanium network](https://github.com/titaniumnetwork-dev) - ultraviolet, the proxy
 
 ## license
-this website is registered under the [MIT license](LICENSE), read it if you want idrc
+this website is registered under the [MIT license](LICENSE)
 
 ## discord
 
-join if you want idk, [discord.gg/szvy](https://discord.gg/szvy)
+join for a cookie :P | [discord.gg/szvy](https://discord.gg/szvy)
