@@ -31,7 +31,7 @@ this repo is made in nodejs, which means you can only host this on a few platfor
 
 ## credits
 
-* [qatual](https://github.com/szvy) - made the whole ui
+* [qatual](https://qatual.com) - made the whole ui
 * [ajh](https://endis.rest) - all the backend help
 * [titanium network](https://github.com/titaniumnetwork-dev) - ultraviolet, the proxy
 
