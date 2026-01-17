@@ -1,15 +1,15 @@
  :root {
  /* main */
-  --primary-bg: #250307;
-  --secondary-bg: #300410;
-  --navbar-bg: #35070d;
-  --quicklink-bg: #35040a;
-  --quicklink-hover: #42050c;
+  --primary-bg: #131313;
+  --secondary-bg: #1d1d1d;
+  --navbar-bg: #242424;
+  --quicklink-bg: #222222;
+  --quicklink-hover: #242424;
   
   /* accent */
-  --accent-dark: #490714;
-  --accent-darker: #680a1f;
-  --accent-hover: rgb(242, 88, 161);
+  --accent-dark: rgb(51, 51, 51);
+  --accent-darker: rgb(29, 29, 29);
+  --accent-hover: rgb(143, 142, 142);
   --accent-blue: #040a35;
   --accent-blue-dark: #050c42;
   
@@ -19,18 +19,19 @@
   --text-disabled: #545454;
   
   /* border/outlines */
-  --border-primary: #490714;
-  --border-secondary: #680a1f;
+  --border-primary: #ffffff;
+  --border-secondary: #e4e4e4;
   --border-white: #ffffff;
   --border-pink: rgb(242, 88, 161);
   
   /* shadows/glows */
-  --shadow-primary: #490714;
-  --shadow-secondary: #680a1f;
+  --shadow-primary: #363636;
+  --shadow-secondary: #424242;
   --shadow-pink: rgb(242, 88, 161);
   --shadow-white: white;
   
   /* miscalllenous */
-  --loading-spinner: #000;
-  --roddy-box-bg: rgba(0, 0, 0, 0.911);
+  --loading-spinner: #ffffff;
+  --roddy-box-bg: rgba(255, 255, 255, 0.911);
+
 }

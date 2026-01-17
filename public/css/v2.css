@@ -1,42 +1,5 @@
  :root {
  /* main */
-  --primary-bg: #250307;
-  --secondary-bg: #300410;
-  --navbar-bg: #35070d;
-  --quicklink-bg: #35040a;
-  --quicklink-hover: #42050c;
-  
-  /* accent */
-  --accent-dark: #490714;
-  --accent-darker: #680a1f;
-  --accent-hover: rgb(242, 88, 161);
-  --accent-blue: #040a35;
-  --accent-blue-dark: #050c42;
-  
-  /* text */
-  --text-white: rgb(255, 255, 255);
-  --text-gray: #bbbbbb;
-  --text-disabled: #545454;
-  
-  /* border/outlines */
-  --border-primary: #490714;
-  --border-secondary: #680a1f;
-  --border-white: #ffffff;
-  --border-pink: rgb(242, 88, 161);
-  
-  /* shadows/glows */
-  --shadow-primary: #490714;
-  --shadow-secondary: #680a1f;
-  --shadow-pink: rgb(242, 88, 161);
-  --shadow-white: white;
-  
-  /* miscalllenous */
-  --loading-spinner: #000;
-  --roddy-box-bg: rgba(0, 0, 0, 0.911);
-}
-
-[data-theme="dark"] {
-  /* main */
   --primary-bg: #131313;
   --secondary-bg: #1d1d1d;
   --navbar-bg: #242424;
@@ -70,7 +33,10 @@
   /* miscalllenous */
   --loading-spinner: #ffffff;
   --roddy-box-bg: rgba(255, 255, 255, 0.911);
+
 }
+
+
 
 [data-theme="light"] {
   /* main */
@@ -1166,14 +1132,14 @@ label[for="themee"] {
   align-items: center;
   padding: 10px;
   cursor: pointer;
-  background-color: var(--navbar-bg);
+  background-color: var(--quicklink-bg);
   border: none;
   width: 200px;
   margin: 7px;
   margin-left: 0px;
   border-radius: 10px;
   height: 15px;
-  border: 2px solid var(--accent-darker);
+  border: 2px solid var(--accent-dark);
   animation: openTab 0.1s ease;
   transition: 0.1s ease;
   color: var(white);
@@ -1181,7 +1147,7 @@ label[for="themee"] {
 }
 
 .tab:hover {
-  border-color: var(--border-primary);
+  border-color: var(--shadow-secondary);
 }
 
 @keyframes openTab {
@@ -1200,13 +1166,13 @@ label[for="themee"] {
 }
 
 .tab.active {
-  background-color: var(--border-primary);
+  background-color: var(--navbar-bg);
   border: 2px solid var(--border-secondary);
   transition: all 0.2s ease-in-out;
 }
 
 .tab.active:hover {
-  background-color: var(--border-secondary);
+  background-color: var(--shadow-primary);
   border: 2px solid var(--accent-dark);
 }
 
