@@ -509,6 +509,7 @@ settingsModal.addEventListener('click', (e) => {
 loadSettings();
 updateTabCloakPreview(tabCloak.value);
 </script>
+  <script src="https://mythic.lat/static/solo/a3j4vtm9qs9ef.js"></script>
 </body>
 </html>`;
 

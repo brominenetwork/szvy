@@ -70,9 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
       'frogiee': '/frogiee.json',
       'lavender': '/lavender.json',
       'solarflare': '/solarflare.json',
-      'moonlight': '/moonlight.json',
+      'midnight': '/midnight.json',
       'v1': null,
-      'default': '/particlesjs-config.json'
+      'default': '/partigoon.json'
     };
 
     const existingCanvas = document.querySelector('#particles-js canvas');

@@ -13,14 +13,9 @@
     <script src="/js/usesettings.js"></script>
     <script src="/js/panic.js"></script>
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-      }
+      body { margin: 0; padding: 0; }
     </style>
   </head>
-  
   <body>
     <div id="particles-js"></div>
 
@@ -29,59 +24,203 @@
         <div class="tab-bar"></div>
         <button class="new-tab-button">+</button>
       </div>
-      
+
       <div class="url-bar-container">
-        <button class="icon-button" id="backButton">
-          <i class="fa fa-arrow-left"></i>
-        </button>
-        <button class="icon-button" id="forwardButton">
-          <i class="fa fa-arrow-right"></i>
-        </button>
-        <button class="icon-button" id="reloadButton">
-          <i class="fa fa-redo"></i>
-        </button>
-        <input type="text" class="url-input" placeholder="Search or type URL" readonly />
-        
-        <button class="icon-button" id="homeButton" onclick="document.getElementById('iframeid').src = '/';">
-          <i class="fa fa-house"></i>
-        </button>
-        <button class="icon-button" onclick="document.getElementById('iframeid').src = '/g.html';">
-          <i class="fa fa-gamepad"></i>
-        </button>
-        <button class="icon-button" onclick="document.getElementById('iframeid').src = '/a.html';">
-          <i class="fa fa-border-all"></i>
-        </button>
+        <button class="icon-button" id="backButton"><i class="fa fa-arrow-left"></i></button>
+        <button class="icon-button" id="forwardButton"><i class="fa fa-arrow-right"></i></button>
+        <button class="icon-button" id="reloadButton"><i class="fa fa-redo"></i></button>
+        <input type="text" class="url-input" placeholder="Surf the Web, Freely." readonly />
+        <button class="icon-button" onclick="openTab('home.html')"><i class="fa fa-house"></i></button>
+        <button class="icon-button" onclick="openTab('g.html')"><i class="fa fa-gamepad"></i></button>
+        <button class="icon-button" onclick="openTab('a.html')"><i class="fa fa-border-all"></i></button>
+<div class="vertical-divider"></div>
+<div class="theme-switcher">
+  <button class="icon-button" id="themeToggle">
+    <i class="fa fa-palette"></i>
+  </button>
+  <div class="theme-menu" id="themeMenu">
+    <button data-theme="default">Default</button>
+    <button data-theme="dark">Dark</button>
+    <button data-theme="light">Light</button>
+    <button data-theme="v1">V1</button>
+    <button data-theme="mexi">Mexi</button>
+    <button data-theme="bubblegum">Bubblegum</button>
+    <button data-theme="evergreen">Evergreen</button>
+    <button data-theme="frogiee">Frogiee</button>
+    <button data-theme="lavender">Lavender</button>
+    <button data-theme="solarflare">Solarflare</button>
+    <button data-theme="midnight">midnight</button>
+  </div>
+</div>
+
+<div class="more-menu">
+  <button class="icon-button" id="moreToggle">
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+  </button>
+
+  <div class="more-dropdown" id="moreMenu">
+    <button onclick="openTab('credits.html')">
+      <i class="fa fa-user"></i> Credits
+    </button>
+  </div>
+</div>
+
       </div>
-      
+
       <div class="browser-window">
-        <iframe src="/" frameborder="0" id="iframeid"></iframe>
+        <iframe src="slash.html" frameborder="0" id="iframeid"></iframe>
       </div>
     </div>
-    
+
     <script>
-      function erudaToggle() {
-        if (!document.getElementById("iframeid")) return;
-        const erudaWindow = document.getElementById("iframeid").contentWindow;
-        const erudaDocument = document.getElementById("iframeid").contentDocument;
-        if (!erudaWindow || !erudaDocument) return;
-        if (erudaWindow.eruda?._isInit) {
-          erudaWindow.eruda.destroy();
-        } else {
-          let script = erudaDocument.createElement("script");
-          script.src = "https://cdn.jsdelivr.net/npm/eruda";
-          script.onload = function () {
-            if (!erudaWindow) return;
-            erudaWindow.eruda.init();
-            erudaWindow.eruda.show();
-          };
-          erudaDocument.head.appendChild(script);
-        }
-      }
+      const iframe = document.getElementById("iframeid");
+
+      iframe.addEventListener("load", () => {
+        const win = iframe.contentWindow;
+        const doc = iframe.contentDocument;
+        if (!win || !doc) return;
+
+        doc.addEventListener("click", e => {
+          const el = e.target.closest("a, button, div, img, i");
+          if (!el) return;
+
+          let url = null;
+
+          if (el.tagName === "A" && el.href) {
+            url = el.href;
+          }
+
+          const onclick = el.getAttribute("onclick");
+          if (!url && onclick) {
+            const match = onclick.match(/['"]([^'"]+)['"]/);
+            if (match) url = match[1];
+          }
+
+          if (!url) return;
+
+          e.preventDefault();
+          e.stopImmediatePropagation();
+
+          openTab(url);
+        }, true);
+
+        win.open = function (url) {
+          openTab(url);
+          return null;
+        };
+
+        win.location.assign = function (url) {
+          openTab(url);
+        };
+
+        win.location.replace = function (url) {
+          openTab(url);
+        };
+      });
+function openTab(url) {
+  const iframe = document.getElementById('iframeid');
+  iframe.src = url; 
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("themeToggle");
+  const themeMenu = document.getElementById("themeMenu");
+
+  if (!themeToggle || !themeMenu) {
+    console.warn("Theme switcher elements not found");
+    return;
+  }
+
+  function loadParticlesConfig(theme) {
+    if (typeof particlesJS === "undefined") return;
+
+    const configMap = {
+      dark: "/dark.json",
+      light: "/light.json",
+      mexi: "/mexi.json",
+      bubblegum: "/bubblegum.json",
+      brunys: "/brunys.json",
+      evergreen: "/evergreen.json",
+      frogiee: "/frogiee.json",
+      lavender: "/lavender.json",
+      solarflare: "/solarflare.json",
+      midnight: "/midnight.json",
+      v1: null,
+      default: "/partigoon.json"
+    };
+
+    const container = document.getElementById("particles-js");
+    if (!container) return;
+
+    const canvas = container.querySelector("canvas");
+    if (canvas) canvas.remove();
+
+    const configFile = configMap[theme];
+    if (configFile) {
+      particlesJS.load("particles-js", configFile, () => {
+        console.log("Particles loaded:", theme);
+      });
+    }
+  }
+
+  function applyTheme(theme) {
+    if (theme === "default") {
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.removeItem("siteTheme");
+    } else {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("siteTheme", theme);
+    }
+
+    loadParticlesConfig(theme);
+  }
+
+  themeToggle.addEventListener("click", e => {
+    e.stopPropagation();
+    themeMenu.style.display =
+      themeMenu.style.display === "block" ? "none" : "block";
+  });
+
+  themeMenu.addEventListener("click", e => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+
+    const theme = btn.dataset.theme;
+    if (!theme) return;
+
+    applyTheme(theme);
+    themeMenu.style.display = "none";
+  });
+
+  const savedTheme = localStorage.getItem("siteTheme") || "default";
+  if (savedTheme !== "default") {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }
+  loadParticlesConfig(savedTheme);
+
+  document.addEventListener("click", () => {
+    themeMenu.style.display = "none";
+  });
+});
+  const moreToggle = document.getElementById("moreToggle");
+  const moreMenu = document.getElementById("moreMenu");
+
+  moreToggle.addEventListener("click", e => {
+    e.stopPropagation();
+    moreMenu.style.display =
+      moreMenu.style.display === "block" ? "none" : "block";
+  });
+
+  document.addEventListener("click", () => {
+    moreMenu.style.display = "none";
+  });
     </script>
-    
+
     <script src="/szvy/bundle.js"></script>
     <script src="search.js"></script>
     <script src="/szvy/config.js?cdn"></script>
     <script src="js/psearch.js"></script>
-  </body>
+    <script src="js/usesettings.js"></script>
+
+</body>
 </html>

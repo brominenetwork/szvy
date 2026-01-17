@@ -1,39 +1,38 @@
-:root {
-  /* main */
-  --primary-bg: #000;
-  --secondary-bg: #141414;
-  --navbar-bg: #0d0d0d;
-  --quicklink-bg: rgba(0,0,0,0.5);
-  --quicklink-hover: #ccc;
+ :root {
+ /* main */
+  --primary-bg: #250307;
+  --secondary-bg: #300410;
+  --navbar-bg: #35070d;
+  --quicklink-bg: #35040a;
+  --quicklink-hover: #42050c;
   
   /* accent */
-  --accent-dark: #fff;
-  --accent-darker: #ccc;
-  --accent-hover: #fff;
-  --accent-blue: #fff;
-  --accent-blue-dark: #ccc;
+  --accent-dark: #490714;
+  --accent-darker: #680a1f;
+  --accent-hover: rgb(242, 88, 161);
+  --accent-blue: #040a35;
+  --accent-blue-dark: #050c42;
   
   /* text */
-  --text-white: #fff;
-  --text-gray: #ccc;
-  --text-disabled: #666;
+  --text-white: rgb(255, 255, 255);
+  --text-gray: #bbbbbb;
+  --text-disabled: #545454;
   
   /* border/outlines */
-  --border-primary: #fff;
-  --border-secondary: #ccc;
-  --border-white: #fff;
-  --border-pink: #ccc;
+  --border-primary: #490714;
+  --border-secondary: #680a1f;
+  --border-white: #ffffff;
+  --border-pink: rgb(242, 88, 161);
   
   /* shadows/glows */
-  --shadow-primary: #fff;
-  --shadow-secondary: #ccc;
-  --shadow-pink: #ccc;
-  --shadow-white: #fff;
+  --shadow-primary: #490714;
+  --shadow-secondary: #680a1f;
+  --shadow-pink: rgb(242, 88, 161);
+  --shadow-white: white;
   
-  /* miscellaneous */
-  --loading-spinner: #fff;
-  --roddy-box-bg: rgba(0,0,0,0.5);
-
+  /* miscalllenous */
+  --loading-spinner: #000;
+  --roddy-box-bg: rgba(0, 0, 0, 0.911);
 }
 
 [data-theme="dark"] {
@@ -369,46 +368,48 @@
   --roddy-box-bg: rgba(42, 24, 9, 0.9);
 }
 
-[data-theme="moonlight"] {
+[data-theme="midnight"] {
   /* main */
-  --primary-bg: #250307;
-  --secondary-bg: #300410;
-  --navbar-bg: #35070d;
-  --quicklink-bg: #35040a;
-  --quicklink-hover: #42050c;
+  --primary-bg: #000;
+  --secondary-bg: #000000;
+  --navbar-bg: #0d0d0d;
+  --quicklink-bg: rgba(0,0,0,0.5);
+  --quicklink-hover: #ccc;
   
   /* accent */
-  --accent-dark: #490714;
-  --accent-darker: #680a1f;
-  --accent-hover: rgb(242, 88, 161);
-  --accent-blue: #040a35;
-  --accent-blue-dark: #050c42;
+  --accent-dark: #fff;
+  --accent-darker: #ccc;
+  --accent-hover: rgb(0, 255, 157);
+  --accent-blue: #fff;
+  --accent-blue-dark: #ccc;
   
   /* text */
-  --text-white: rgb(255, 255, 255);
-  --text-gray: #bbbbbb;
-  --text-disabled: #545454;
+  --text-white: #fff;
+  --text-gray: #ccc;
+  --text-disabled: #666;
   
   /* border/outlines */
-  --border-primary: #490714;
-  --border-secondary: #680a1f;
-  --border-white: #ffffff;
-  --border-pink: rgb(242, 88, 161);
+  --border-primary: #fff;
+  --border-secondary: #ccc;
+  --border-white: #fff;
+  --border-pink: #ccc;
   
   /* shadows/glows */
-  --shadow-primary: #490714;
-  --shadow-secondary: #680a1f;
-  --shadow-pink: rgb(242, 88, 161);
-  --shadow-white: white;
+  --shadow-primary: #fff;
+  --shadow-secondary: #ccc;
+  --shadow-pink: #ccc;
+  --shadow-white: #fff;
   
-  /* miscalllenous */
-  --loading-spinner: #000;
-  --roddy-box-bg: rgba(0, 0, 0, 0.911);
+  /* miscellaneous */
+  --loading-spinner: #fff;
+  --roddy-box-bg: rgba(0,0,0,0.5);
+
 }
+
 
 body {
   background-color: var(--primary-bg);
-  font-family: 'notitle', sans-serif;
+  font-family: 'Parkinsans', sans-serif;
   transition: all 0.2s ease-in-out;
   cursor: url('/assets/normal.cur'), auto;
 }
@@ -477,7 +478,7 @@ select:hover {
 
 .smallahhtext, #output {
   color: var(--text-white);
-  font-family: notitle;
+  font-family: Parkinsans;
   font-size: 30px;
   text-align: center;
 }
@@ -485,7 +486,7 @@ select:hover {
 .motd {
   margin-bottom: -20px;
   color: var(--text-white);
-  font-family: notitle;
+  font-family: Parkinsans;
   font-size: 45px;
   text-align: center;
 }
@@ -510,7 +511,7 @@ select:hover {
 }
 
 #allb, #abcloak, #discord, #confirmtab, #setkeybind, .bookmarklet-btn, .bookmark-link {
-  font-family: notitle;
+  font-family: Parkinsans;
   font-size: 1.2em;
   padding: 10px 20px;
   margin: 10px;
@@ -533,7 +534,7 @@ select:hover {
 
 #allb:disabled, #abcloak:disabled, #confirmtab:disabled, #setkeybind:disabled, .bookmarklet-btn:disabled, .bookmark-link:disabled {
   cursor: not-allowed;
-  font-family: notitle;
+  font-family: Parkinsans;
   font-size: 1.2em;
   padding: 10px 20px;
   margin: 10px;
@@ -611,7 +612,7 @@ select:hover {
 
 #splash-text {
   color: var(--text-white);
-  font-family: notitle;
+  font-family: Parkinsans;
   text-align: center;
   font-size: 16px;
 }
@@ -673,7 +674,7 @@ select:hover {
   border: 2px solid var(--accent-dark);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  font-family: notitle;
+  font-family: Parkinsans;
   text-align: center;
   position: relative;
   transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -681,7 +682,7 @@ select:hover {
 
 #searchBar::placeholder {
   color: var(--text-gray);
-  font-family: notitle;
+  font-family: Parkinsans;
   font-size: 16px;
   position: relative;
 }
@@ -705,14 +706,14 @@ select:hover {
   border: 2px solid var(--accent-dark);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  font-family: notitle;
+  font-family: Parkinsans;
   text-align: center;
   transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .form__input::placeholder {
   color: var(--text-gray);
-  font-family: notitle;
+  font-family: Parkinsans;
   font-size: 18px;
 }
 
@@ -744,7 +745,7 @@ footer {
 }
 
 #gatekeep-button {
-  font-family: notitle;
+  font-family: Parkinsans;
   font-size: 1.2em;
   padding: 10px 20px;
   background-color: var(--primary-bg);
@@ -764,7 +765,7 @@ footer {
 
 #gatekeep-status {
   margin-top: 10px;
-  font-family: notitle;
+  font-family: Parkinsans;
   font-size: 1.2em;
   color: var(--text-white);
 }
@@ -790,7 +791,7 @@ h2 {
 }
 
 #faviconDropdown, #themee {
-  font-family: notitle;
+  font-family: Parkinsans;
   background-color: var(--primary-bg);
   color: var(--text-white);
   border: 1px solid var(--text-white);
@@ -803,12 +804,12 @@ h2 {
 
 label[for="faviconDropdown"] {
   color: var(--text-white);
-  font-family: notitle;
+  font-family: Parkinsans;
 }
 
 label[for="themee"] {
   color: var(--text-white);
-  font-family: notitle;
+  font-family: Parkinsans;
 }
 
 .navbar-container {
@@ -857,7 +858,7 @@ label[for="themee"] {
   border-radius: 8px;
   color: var(--text-white);
   text-decoration: none;
-  font-family: 'notitle', sans-serif;
+  font-family: 'Parkinsans', sans-serif;
   font-size: 1rem;
   transition: all 0.2s ease;
 }
@@ -890,7 +891,7 @@ label[for="themee"] {
   padding: 10px 15px;
   border-radius: 8px;
   color: var(--text-white);
-  font-family: 'notitle', sans-serif;
+  font-family: 'Parkinsans', sans-serif;
   font-size: 1rem;
 }
 
@@ -1031,7 +1032,7 @@ label[for="themee"] {
 }
 
 #gatekeep-button, #tabselect {
-  font-family: notitle;
+  font-family: Parkinsans;
   font-size: 1.2em;
   padding: 10px 20px;
   margin: 10px;
@@ -1054,7 +1055,7 @@ label[for="themee"] {
 
 #gatekeep-status {
   margin-top: 10px;
-  font-family: notitle;
+  font-family: Parkinsans;
   font-size: 1.2em;
   color: var(--text-white);
 }
@@ -1077,7 +1078,7 @@ label[for="themee"] {
   text-transform: capitalize;
   position: relative;
   transition: background-color 0.3s ease;
-  font-family: 'notitle';
+  font-family: 'Parkinsans';
 }
 
 .quicklink-button:hover {
@@ -1089,14 +1090,14 @@ label[for="themee"] {
   height: 40px;
   border-radius: 50%;
   margin-bottom: 5px;
-  font-family: 'notitle';
+  font-family: 'Parkinsans';
 }
 
 .quicklink-button p {
   margin: 0;
   font-size: 12px;
   text-align: center;
-  font-family: 'notitle';
+  font-family: 'Parkinsans';
 }
 
 .quicklink-container {
@@ -1105,7 +1106,7 @@ label[for="themee"] {
   align-items: center;
   margin-top: -10px;
   gap: 8px;
-  font-family: 'notitle';
+  font-family: 'Parkinsans';
 }
 
 #adplusiframe {
@@ -1165,7 +1166,7 @@ label[for="themee"] {
   align-items: center;
   padding: 10px;
   cursor: pointer;
-  background-color: var(white);
+  background-color: var(--navbar-bg);
   border: none;
   width: 200px;
   margin: 7px;
@@ -1180,7 +1181,7 @@ label[for="themee"] {
 }
 
 .tab:hover {
-  background-color: var(--quicklink-hover);
+  border-color: var(--border-primary);
 }
 
 @keyframes openTab {
@@ -1199,14 +1200,14 @@ label[for="themee"] {
 }
 
 .tab.active {
-  background-color: var(black);
-  border: 2px solid var(--border-primary);
+  background-color: var(--border-primary);
+  border: 2px solid var(--border-secondary);
   transition: all 0.2s ease-in-out;
 }
 
 .tab.active:hover {
-  background-color: var(--accent-darker);
-  border: 2px solid var(--border-secondary);
+  background-color: var(--border-secondary);
+  border: 2px solid var(--accent-dark);
 }
 
 .tab-title {
@@ -1219,7 +1220,7 @@ label[for="themee"] {
 
 .tab-close {
   margin-left: auto;
-  color: var(rgba(255, 0, 0, 0.492));
+  color: white;
   margin-right: 2px;
   font-size: 20px;
   transform: translateY(-1px);
@@ -1249,14 +1250,14 @@ label[for="themee"] {
   font-size: 15px;
   background: var(--quicklink-bg);
   color: var(--text-white);
+  box-shadow: 0 0 0 1px var(--shadow-primary);
   outline: none;
   font-family: parkinsans;
   transition: 0.15s;
 }
 
 .url-input:focus {
-  background: var(--quicklink-hover);
-  box-shadow: 0 0 0 2px var(--shadow-primary);
+  box-shadow: 0 0 0 3.5px var(--accent-hover);
 }
 
 .icon-button {
@@ -1273,8 +1274,13 @@ label[for="themee"] {
   transition: all 0.2s ease-in-out;
 }
 
+.icon-button i {
+  pointer-events: none;
+}
+
+
 .icon-button:hover {
-  background: var(--quicklink-hover);
+  color: var(--accent-hover);
 }
 
 .new-tab-button {
@@ -1362,7 +1368,7 @@ label[for="themee"] {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  font-family: 'notitle', sans-serif;
+  font-family: 'Parkinsans', sans-serif;
   margin-bottom: 10vh;
 }
 
@@ -1440,7 +1446,7 @@ header {
   padding: 15px;
   border-top: 1px solid var(--border-secondary);
   background-color: var(--primary-bg);
-  font-family: 'notitle', sans-serif;
+  font-family: 'Parkinsans', sans-serif;
 }
 
 #user-input {
@@ -1454,7 +1460,7 @@ header {
   resize: none;
   height: 40px;
   transition: all ease-in-out 0.2s;
-  font-family: 'notitle', sans-serif;
+  font-family: 'Parkinsans', sans-serif;
 }
 
 #user-input::placeholder {
@@ -1469,7 +1475,7 @@ header {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: 'notitle', sans-serif;
+  font-family: 'Parkinsans', sans-serif;
 }
 
 #send-button:hover {
@@ -1539,7 +1545,7 @@ code {
   justify-content: center;
   cursor: pointer;
   color: var(--text-white);
-  font-family: notitle;
+  font-family: Parkinsans;
   font-size: 18px;
   transition: all 0.2s ease-in-out;
   padding: 10px;
@@ -1623,7 +1629,7 @@ code {
   cursor: pointer;
   font-size: 16px;
   transition: all 0.3s;
-  font-family: 'notitle', sans-serif;
+  font-family: 'Parkinsans', sans-serif;
 }
 
 .copy-btn {
@@ -1657,7 +1663,7 @@ code {
   font-size: 14px;
   margin-top: 20px;
   text-align: center;
-  font-family: 'notitle', sans-serif;
+  font-family: 'Parkinsans', sans-serif;
   margin-bottom: 25px;
 }
 
@@ -1675,7 +1681,7 @@ code {
 }
 
 .options-modal.active ~ * {
-  pointer-events: none;
+  pointer-events: all;
   filter: brightness(0.5);
 }
 
@@ -1702,11 +1708,94 @@ body.modal-active::before {
 }
 
 @font-face {
-  font-family: notitle;
+  font-family: Parkinsans;
   src: url(../assets/RedditSans-Medium.ttf);
 }
 
 @font-face {
   font-family: title;
   src: url(../assets/ClashDisplayBold.otf)
+}
+
+.theme-switcher {
+  position: relative; 
+  display: inline-flex;
+}
+
+.theme-menu {
+  position: absolute;       
+  top: calc(100% + 6px);      
+  right: 0;
+  background: #000;
+  border: 1px solid var(--border-secondary);
+  box-shadow: 0 6px 20px var(--shadow-primary);
+  border-radius: 10px;
+  padding: 6px;
+  min-width: 160px;
+  max-width: 200px;
+  display: none;
+  z-index: 9999;
+  flex-direction: column;
+}
+
+.theme-menu button {
+  all: unset;                 
+  display: block;
+
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.theme-menu button:hover {
+  background: var(--quicklink-hover);
+}
+
+.vertical-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 0 8px;
+}
+
+.more-menu {
+  position: relative;
+}
+
+.more-dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: var(--bg, #000000);
+  border-radius: 8px;
+  min-width: 190px;
+  padding: 6px;
+  border: 1px solid var(--border-secondary);
+  box-shadow: 0 6px 20px var(--shadow-primary);
+  border-radius: 10px;  z-index: 999;
+}
+
+.more-dropdown button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px 12px;
+  text-align: left;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.more-dropdown button:hover {
+  background: rgba(12, 12, 12, 0.08);
+}
+
+.more-dropdown i {
+  margin-right: 8px;
 }

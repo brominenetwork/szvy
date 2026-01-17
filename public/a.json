@@ -35,9 +35,9 @@
     "alt": "Jetpack Joyride"
   },
   {
-    "url": "/gsrc/8.html",
+    "url": "/ports/freaky",
     "img": "/covers/8.png",
-    "alt": "8"
+    "alt": "Friday Night Funkin"
   },
   {
     "url": "/gsrc/9.html",
@@ -3338,5 +3338,15 @@
     "url": "/gsrc/667.html",
     "img": "/covers/667.png",
     "alt": "IN STARS AND TIME v1.0.6.3"
+  },
+  {
+    "url": "/embed.html#https://nowgg.fun/apps/a/19900/b.html",
+    "img": "/assets/roblox.png",
+    "alt": "Roblox"
+  },
+    {
+    "url": "/embed.html#https://nowgg.fun/apps/aptoide/5874/aptoide.html?deep_link=aptoidesearch://com.epicgames.fortnite",
+    "img": "/assets/fn.png",
+    "alt": "Fortnite"
   }
 ]
