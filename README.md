@@ -5,7 +5,7 @@
 <h1 align="center">Szvy Central V3</h1>
 deprecated, why? i made no money in the half a year i owned it.
 -qatual (owner of bromine studios.)
-<h1 align="center">------------------------------------------------------</h1>
+
 
 A modern unblocked games site, based off of Ultraviolet.
 
